@@ -8,7 +8,7 @@ console.log(`${devMode ? 'development' : 'production'} mode bundle`);
 export default [
   {
     // ES6
-    input: 'src/main.js',
+    input: 'src/index.js',
 
     watch: {
       include: 'src/**',
@@ -37,7 +37,7 @@ export default [
   },
   {
     // ES5
-    input: 'src/main.js',
+    input: 'src/index.js',
 
     plugins: [
       // https://github.com/terser/terser#minify-options
