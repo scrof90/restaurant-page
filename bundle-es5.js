@@ -26,7 +26,7 @@ function n() {
     n.classList.add("attribution"), n.href = "https://www.artstation.com/artwork/aa6R8", n.textContent = "Background art by Renaud ROCHE", e.appendChild(n);
     var a = document.createElement("li"),
         c = document.createElement("a");
-    return n.classList.add("attribution"), n.href = "https://www.artstation.com/artwork/nlKG6", n.textContent = "Additional art by J.Otto Szatmari", a.appendChild(c), t.appendChild(e), t.appendChild(a), t;
+    return c.classList.add("attribution"), c.href = "https://www.artstation.com/artwork/nlKG6", c.textContent = "Additional art by J.Otto Szatmari", a.appendChild(c), t.appendChild(e), t.appendChild(a), t;
   }(),
       n = function () {
     var t = document.createElement("a");
