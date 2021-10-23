@@ -1,23 +1,36 @@
+@font-face {
+  font-family: didactGothic;
+  src: url(fonts/DidactGothic-Regular.ttf);
+}
+
 body {
+  font-family: didactGothic, Roboto;
+  font-size: 18px;
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  background-image: url('img/renaud-roche-dyson-def.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: hsl(210, 40%, 10%);
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 header {
   align-self: center;
   text-align: center;
-  margin: 0.5em 0;
-  color: white;
-  background-color: black;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+h1 {
+  color: hsl(40, 52%, 50%);
   font-size: 3em;
   font-weight: 800;
+  text-shadow: 0px 0px 8px hsl(40, 52%, 30%);
 }
 
 nav {
@@ -36,7 +49,8 @@ nav {
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: hsla(0, 0%, 0%, 70%);
+  font-weight: 600;
+  background-color: hsla(210, 40%, 5%, 90%);
   padding: 1em;
   border: cornflowerblue;
   border-top-left-radius: 10px;
@@ -44,18 +58,46 @@ nav {
   box-shadow: 0px 0px 10px cornflowerblue;
 }
 
+.active {
+  background-color: hsla(210, 40%, 40%, 90%);
+  box-shadow: 0px 0px 20px cornflowerblue;
+}
+
 main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-image: url('img/renaud-roche-dyson-def.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   color: white;
   font-size: larger;
-  align-self: center;
+  line-height: 1.5em;
   flex: 1;
   max-width: 800px;
   padding: 2em;
-  margin: 1em;
-  background-color: hsla(0, 0%, 0%, 70%);
+  background-color: hsla(210, 40%, 5%, 90%);
   border: cornflowerblue;
   border-radius: 10px;
   box-shadow: 0px 0px 10px cornflowerblue;
+}
+
+.img-home {
+  max-width: 400px;
+}
+
+.bottom-text {
+  font-size: 0.7em;
+  align-self: flex-end;
 }
 
 footer {
@@ -63,7 +105,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.2em 0.5em;
   background-color: hsla(0, 0%, 0%, 30%);
 }
 
@@ -89,7 +131,7 @@ li {
 }
 
 .my-github {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
 }
