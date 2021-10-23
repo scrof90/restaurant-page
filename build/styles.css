@@ -1,0 +1,82 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background-image: url('img/renaud-roche-dyson-def.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  align-self: center;
+  text-align: center;
+  margin: 0.5em 0;
+  color: white;
+  background-color: black;
+  font-size: 3em;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2em;
+}
+
+.tab {
+  height: 1.5em;
+  width: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  padding: 1em;
+}
+
+main {
+  align-self: center;
+  flex: 1;
+  width: 800px;
+  padding: 2em;
+  margin: 1em 0;
+}
+
+footer {
+  height: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  gap: 2em;
+  row-gap: 0.5em;
+  font-size: smaller;
+}
+
+li {
+  flex: 1 1 auto;
+}
+
+.attribution,
+.attribution:hover,
+.attribution:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.my-github {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
