@@ -62,9 +62,9 @@ function createAttributionList() {
 
   const li2 = document.createElement('li');
   const a2 = document.createElement('a');
-  a1.classList.add('attribution');
-  a1.href = 'https://www.artstation.com/artwork/nlKG6';
-  a1.textContent = 'Additional art by J.Otto Szatmari';
+  a2.classList.add('attribution');
+  a2.href = 'https://www.artstation.com/artwork/nlKG6';
+  a2.textContent = 'Additional art by J.Otto Szatmari';
   li2.appendChild(a2);
 
   attributionList.appendChild(li1);
