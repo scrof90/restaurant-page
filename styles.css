@@ -1,0 +1,137 @@
+@font-face {
+  font-family: didactGothic;
+  src: url(fonts/DidactGothic-Regular.ttf);
+}
+
+body {
+  font-family: didactGothic, Roboto;
+  font-size: 18px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background-color: hsl(210, 40%, 10%);
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+header {
+  align-self: center;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+h1 {
+  color: hsl(40, 52%, 50%);
+  font-size: 3em;
+  font-weight: 800;
+  text-shadow: 0px 0px 8px hsl(40, 52%, 30%);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2em;
+  border-bottom: 1px solid cornflowerblue;
+  box-shadow: 0 10px 10px -10px cornflowerblue;
+}
+
+.tab {
+  height: 1em;
+  width: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  background-color: hsla(210, 40%, 5%, 90%);
+  padding: 1em;
+  border: cornflowerblue;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 0px 10px cornflowerblue;
+}
+
+.active {
+  background-color: hsla(210, 40%, 40%, 90%);
+  box-shadow: 0px 0px 20px cornflowerblue;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-image: url('img/renaud-roche-dyson-def.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: larger;
+  line-height: 1.5em;
+  flex: 1;
+  max-width: 800px;
+  padding: 2em;
+  background-color: hsla(210, 40%, 5%, 90%);
+  border: cornflowerblue;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px cornflowerblue;
+}
+
+.img-home {
+  max-width: 400px;
+}
+
+.bottom-text {
+  font-size: 0.7em;
+  align-self: flex-end;
+}
+
+footer {
+  height: 2.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0.5em;
+  background-color: hsla(0, 0%, 0%, 30%);
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  gap: 2em;
+  row-gap: 0.5em;
+  font-size: smaller;
+}
+
+li {
+  flex: 1 1 auto;
+}
+
+.attribution,
+.attribution:hover,
+.attribution:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.my-github {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
