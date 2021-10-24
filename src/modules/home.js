@@ -1,13 +1,6 @@
 function loadHomeContent() {
-  const main = document.querySelector('main');
-  main.innerHTML = '';
-  const homeElement = createHomeElement();
-  main.appendChild(homeElement);
-}
-
-function createHomeElement() {
-  const homeElement = document.createElement('div');
-  homeElement.classList.add('content');
+  const content = document.querySelector('.js-content');
+  content.innerHTML = '';
 
   const image = createHomeImage();
 
@@ -30,9 +23,7 @@ function createHomeElement() {
     '<y>*</y>the Ur-Quan will be forcefully escorted from the premises';
 
   const elements = [image, header, p1, p2, p3, bottomText];
-  elements.forEach((el) => homeElement.appendChild(el));
-
-  return homeElement;
+  elements.forEach((el) => content.appendChild(el));
 }
 
 function createHomeImage() {

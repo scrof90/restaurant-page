@@ -36,7 +36,14 @@ function createNav() {
 }
 
 function createMain() {
-  return document.createElement('main');
+  const main = document.createElement('main');
+
+  const content = document.createElement('div');
+  content.classList.add('content', 'js-content');
+
+  main.appendChild(content);
+
+  return main;
 }
 
 function createFooter() {
