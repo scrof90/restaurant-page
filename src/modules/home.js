@@ -1,4 +1,4 @@
-function loadHomeContent() {
+function loadHomeTab() {
   const content = document.querySelector('.js-content');
   content.innerHTML = '';
 
@@ -9,7 +9,7 @@ function loadHomeContent() {
 
   const p1 = document.createElement('p');
   p1.innerHTML =
-    'With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build < strong > Dyson sphere</ >, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.';
+    'With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.';
 
   const p2 = document.createElement('p');
   p2.textContent = 'We are always open';
@@ -35,4 +35,4 @@ function createHomeImage() {
   return image;
 }
 
-export { loadHomeContent };
+export { loadHomeTab };
