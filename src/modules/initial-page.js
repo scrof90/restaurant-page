@@ -6,9 +6,9 @@ function loadPage() {
 
 function createHeader() {
   const header = document.createElement('header');
-
   const title = document.createElement('h1');
   title.textContent = "Saul Dyson's Bar";
+
   header.appendChild(title);
 
   return header;
@@ -81,6 +81,7 @@ function createMyGithubLink() {
   img.classList.add('my-github');
   img.src = 'https://avatars.githubusercontent.com/u/46364597?v=4';
   img.alt = '@scrof90';
+
   myGithubLink.appendChild(img);
 
   return myGithubLink;

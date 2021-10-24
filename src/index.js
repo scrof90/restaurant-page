@@ -1,3 +1,5 @@
-import { loadPage } from './modules/initial-page-loader';
+import { loadPage } from './modules/initial-page';
+import { loadHomeContent } from './modules/home';
 
 loadPage();
+loadHomeContent();
