@@ -18,6 +18,12 @@ function e() {
 }
 
 function n() {
+  var t = document.createElement("main"),
+      e = document.createElement("div");
+  return e.classList.add("content", "js-content"), t.appendChild(e), t;
+}
+
+function a() {
   var t = document.createElement("footer"),
       e = function () {
     var t = document.createElement("ul"),
@@ -39,37 +45,29 @@ function n() {
 }
 
 !function () {
-  var a = document.querySelector("body");
-  [t(), e(), document.createElement("main"), n()].forEach(function (t) {
-    return a.appendChild(t);
+  var o = document.querySelector("body");
+  [t(), e(), n(), a()].forEach(function (t) {
+    return o.appendChild(t);
   });
 }(), function () {
-  var t = document.querySelector("main");
+  var t = document.querySelector(".js-content");
   t.innerHTML = "";
 
   var e = function () {
-    var t = document.createElement("div");
-    t.classList.add("content");
+    var t = document.createElement("img");
+    return t.classList.add("img-home"), t.src = "img/j-otto-szatmari-daygonebar-spacestation-jottoszatmari2016.jpg", t.alt = "Bar - Space Station by J.Otto Szatmari", t;
+  }(),
+      n = document.createElement("h2");
 
-    var e = function () {
-      var t = document.createElement("img");
-      return t.classList.add("img-home"), t.src = "img/j-otto-szatmari-daygonebar-spacestation-jottoszatmari2016.jpg", t.alt = "Bar - Space Station by J.Otto Szatmari", t;
-    }(),
-        n = document.createElement("h2");
-
-    n.textContent = "Welcome to Saul Dyson's Bar!";
-    var a = document.createElement("p");
-    a.innerHTML = "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build < strong > Dyson sphere</ >, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.";
-    var o = document.createElement("p");
-    o.textContent = "We are always open";
-    var c = document.createElement("p");
-    c.innerHTML = "All species are welcome<y>*</y>";
-    var r = document.createElement("p");
-    r.classList.add("bottom-text"), r.innerHTML = "<y>*</y>the Ur-Quan will be forcefully escorted from the premises";
-    return [e, n, a, o, c, r].forEach(function (e) {
-      return t.appendChild(e);
-    }), t;
-  }();
-
-  t.appendChild(e);
+  n.textContent = "Welcome to Saul Dyson's Bar!";
+  var a = document.createElement("p");
+  a.innerHTML = "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build < strong > Dyson sphere</ >, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.";
+  var o = document.createElement("p");
+  o.textContent = "We are always open";
+  var c = document.createElement("p");
+  c.innerHTML = "All species are welcome<y>*</y>";
+  var r = document.createElement("p");
+  r.classList.add("bottom-text"), r.innerHTML = "<y>*</y>the Ur-Quan will be forcefully escorted from the premises", [e, n, a, o, c, r].forEach(function (e) {
+    return t.appendChild(e);
+  });
 }();
