@@ -31,8 +31,8 @@ function a() {
         n = document.createElement("a");
     n.classList.add("attribution"), n.href = "https://www.artstation.com/artwork/aa6R8", n.textContent = "Background art by Renaud ROCHE", e.appendChild(n);
     var a = document.createElement("li"),
-        o = document.createElement("a");
-    return o.classList.add("attribution"), o.href = "https://www.artstation.com/artwork/nlKG6", o.textContent = "Additional art by J.Otto Szatmari", a.appendChild(o), t.appendChild(e), t.appendChild(a), t;
+        c = document.createElement("a");
+    return c.classList.add("attribution"), c.href = "https://www.artstation.com/artwork/nlKG6", c.textContent = "Additional art by J.Otto Szatmari", a.appendChild(c), t.appendChild(e), t.appendChild(a), t;
   }(),
       n = function () {
     var t = document.createElement("a");
@@ -44,12 +44,7 @@ function a() {
   return t.appendChild(e), t.appendChild(n), t;
 }
 
-!function () {
-  var o = document.querySelector("body");
-  [t(), e(), n(), a()].forEach(function (t) {
-    return o.appendChild(t);
-  });
-}(), function () {
+function c() {
   var t = document.querySelector(".js-content");
   t.innerHTML = "";
 
@@ -61,13 +56,32 @@ function a() {
 
   n.textContent = "Welcome to Saul Dyson's Bar!";
   var a = document.createElement("p");
-  a.innerHTML = "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build < strong > Dyson sphere</ >, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.";
-  var o = document.createElement("p");
-  o.textContent = "We are always open";
+  a.innerHTML = "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.";
   var c = document.createElement("p");
-  c.innerHTML = "All species are welcome<y>*</y>";
-  var r = document.createElement("p");
-  r.classList.add("bottom-text"), r.innerHTML = "<y>*</y>the Ur-Quan will be forcefully escorted from the premises", [e, n, a, o, c, r].forEach(function (e) {
+  c.textContent = "We are always open";
+  var o = document.createElement("p");
+  o.innerHTML = "All species are welcome<y>*</y>";
+  var s = document.createElement("p");
+  s.classList.add("bottom-text"), s.innerHTML = "<y>*</y>the Ur-Quan will be forcefully escorted from the premises";
+  [e, n, a, c, o, s].forEach(function (e) {
     return t.appendChild(e);
+  });
+}
+
+!function () {
+  var c = document.querySelector("body");
+  [t(), e(), n(), a()].forEach(function (t) {
+    return c.appendChild(t);
+  });
+}(), c(), function () {
+  var t = document.querySelector(".js-home"),
+      e = document.querySelector(".js-menu"),
+      n = document.querySelector(".js-contacts");
+  t.addEventListener("click", function (t) {
+    t.target.classList.add("active"), e.classList.remove("active"), n.classList.remove("active"), c();
+  }), e.addEventListener("click", function (e) {
+    e.target.classList.add("active"), t.classList.remove("active"), n.classList.remove("active"), document.querySelector(".js-content").innerHTML = "";
+  }), n.addEventListener("click", function (n) {
+    n.target.classList.add("active"), t.classList.remove("active"), e.classList.remove("active"), document.querySelector(".js-content").innerHTML = "";
   });
 }();

@@ -5,8 +5,9 @@
 
 body {
   font-family: didactGothic, Roboto;
-  font-size: 18px;
-  height: 100vh;
+  font-size: 16px;
+  line-height: 1.5em;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -14,16 +15,11 @@ body {
   background-color: hsl(210, 40%, 10%);
 }
 
-p {
-  text-align: justify;
-  text-justify: inter-word;
-}
-
 header {
   align-self: center;
   text-align: center;
   margin-top: 1em;
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
 }
 
 h1 {
@@ -34,16 +30,20 @@ h1 {
 }
 
 nav {
+  position: sticky;
+  flex-shrink: 1;
+  height: 2em;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 2em;
+  gap: 3vw;
   border-bottom: 1px solid cornflowerblue;
   box-shadow: 0 10px 10px -10px cornflowerblue;
 }
 
 .tab {
-  height: 1em;
+  cursor: pointer;
+  height: 0.5em;
   width: 4em;
   display: flex;
   justify-content: center;
@@ -56,6 +56,18 @@ nav {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   box-shadow: 0px 0px 10px cornflowerblue;
+  transition: height 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.tab:hover {
+  height: 1em;
+  background-color: hsl(40, 52%, 50%);
+  box-shadow: 0px 0px 15px cornflowerblue;
+}
+
+.tab:active {
+  background-color: hsl(40, 52%, 70%);
 }
 
 .active {
@@ -77,14 +89,15 @@ main {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   color: white;
-  font-size: larger;
-  line-height: 1.5em;
-  flex: 1;
+  font-size: 150%;
+  text-align: center;
+  line-height: 1em;
   max-width: 800px;
-  padding: 2em 4em;
+  flex: 1;
+  padding: 1em;
   background-color: hsla(210, 40%, 5%, 90%);
   border: cornflowerblue;
   border-radius: 10px;
@@ -92,7 +105,8 @@ main {
 }
 
 .img-home {
-  max-width: 400px;
+  flex: 0 1 auto;
+  align-self: stretch;
 }
 
 .bottom-text {
