@@ -5,9 +5,9 @@ import { loadContactsTab } from './modules/contacts';
 
 loadPage();
 loadHomeTab();
-initTabEvents();
+initTabEventListeners();
 
-function initTabEvents() {
+function initTabEventListeners() {
   const homeTab = document.querySelector('.js-home');
   const menuTab = document.querySelector('.js-menu');
   const contactsTab = document.querySelector('.js-contacts');

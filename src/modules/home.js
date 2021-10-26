@@ -1,30 +1,37 @@
 function loadHomeTab() {
   const content = document.querySelector('.js-content');
   content.innerHTML = '';
-
   const image = createHomeImage();
-
-  const header = document.createElement('h2');
-  header.textContent = "Welcome to Saul Dyson's Bar!";
-
-  const p1 = document.createElement('p');
-  p1.innerHTML =
-    'With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.';
-
-  const p2 = document.createElement('p');
-  p2.textContent = 'We are always open';
-
-  const p3 = document.createElement('p');
-  p3.innerHTML = 'All species are welcome<y>*</y>';
-
-  const bottomText = document.createElement('p');
-  bottomText.classList.add('bottom-text');
-  bottomText.innerHTML =
-    '<y>*</y>the Ur-Quan will be forcefully escorted from the premises';
-
-  const elements = [image, header, p1, p2, p3, bottomText];
-  elements.forEach((el) => content.appendChild(el));
+  const header = createTextElement('h2', "Welcome to Saul Dyson's Bar!");
+  const description = createTextElement(
+    'p',
+    'With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy.'
+  );
+  const workingHours = createTextElement('p', 'We are always open');
+  const species = createTextElement('p', 'All species are welcome<y>*</y>');
+  const bottomText = createTextElement(
+    'p',
+    '<y>*</y>the Ur-Quan will be forcefully escorted from the premises',
+    'bottom-text'
+  );
+  appendChildren(
+    content,
+    image,
+    header,
+    description,
+    workingHours,
+    species,
+    bottomText
+  );
 }
+
+// utility
+
+function appendChildren(parent, ...children) {
+  [...children].forEach((child) => parent.appendChild(child));
+}
+
+// image
 
 function createHomeImage() {
   const image = document.createElement('img');
@@ -33,6 +40,15 @@ function createHomeImage() {
     'img/j-otto-szatmari-daygonebar-spacestation-jottoszatmari2016.jpg';
   image.alt = 'Bar - Space Station by J.Otto Szatmari';
   return image;
+}
+
+// text elements
+
+function createTextElement(tag, text, cssClass) {
+  const element = document.createElement(tag);
+  element.innerHTML = text;
+  if (cssClass) element.classList.add(cssClass);
+  return element;
 }
 
 export { loadHomeTab };
