@@ -1,3 +1,14 @@
+const attributions = [
+  {
+    href: 'https://www.artstation.com/artwork/aa6R8',
+    text: 'Background art by Renaud ROCHE'
+  },
+  {
+    href: 'https://www.artstation.com/artwork/nlKG6',
+    text: 'Additional art by J.Otto Szatmari'
+  }
+];
+
 function loadInitialPage() {
   const body = document.querySelector('body');
   const header = createHeader();
@@ -32,10 +43,10 @@ function createTitle() {
 
 function createNav() {
   const nav = document.createElement('nav');
-  const home = createTab(true, 'js-home', 'Home');
-  const menu = createTab(false, 'js-menu', 'Menu');
-  const contacts = createTab(false, 'js-contacts', 'Contacts');
-  appendChildren(nav, home, menu, contacts);
+  const homeTab = createTab(true, 'js-home', 'Home');
+  const menuTab = createTab(false, 'js-menu', 'Menu');
+  const contactsTab = createTab(false, 'js-contacts', 'Contacts');
+  appendChildren(nav, homeTab, menuTab, contactsTab);
   return nav;
 }
 
@@ -51,8 +62,8 @@ function createTab(isActive, jsHook, text) {
 
 function createMain() {
   const main = document.createElement('main');
-  const content = createContentDiv();
-  main.appendChild(content);
+  const contentDiv = createContentDiv();
+  main.appendChild(contentDiv);
   return main;
 }
 
@@ -68,30 +79,24 @@ function createFooter() {
   const footer = document.createElement('footer');
   const attributionList = createAttributionList();
   const myGithubLink = createMyGithubLink();
-  appendChildren(attributionList, myGithubLink);
+  appendChildren(footer, attributionList, myGithubLink);
   return footer;
 }
 
 function createAttributionList() {
   const attributionList = document.createElement('ul');
-
-  const li1 = document.createElement('li');
-  const link1 = createAttributionLink(
-    'https://www.artstation.com/artwork/aa6R8',
-    'Background art by Renaud ROCHE'
-  );
-  li1.appendChild(link1);
-
-  const li2 = document.createElement('li');
-  const link2 = createAttributionLink(
-    'https://www.artstation.com/artwork/nlKG6',
-    'Additional art by J.Otto Szatmari'
-  );
-  li2.appendChild(link2);
-
-  appendChildren(attributionList, li1, li2);
-
+  const attributionListElements = attributions.map(createAttributionElement);
+  attributionListElements.forEach((el) => attributionList.appendChild(el));
   return attributionList;
+}
+
+function createAttributionElement(attribution) {
+  const attributionElement = document.createElement('li');
+  const href = attribution.href;
+  const text = attribution.text;
+  const link = createAttributionLink(href, text);
+  attributionElement.appendChild(link);
+  return attributionElement;
 }
 
 function createAttributionLink(href, text) {
