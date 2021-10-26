@@ -1,4 +1,4 @@
-function loadPage() {
+function loadInitialPage() {
   const body = document.querySelector('body');
   const header = createHeader();
   const nav = createNav();
@@ -118,4 +118,4 @@ function createMyGithubImg() {
   return img;
 }
 
-export { loadPage };
+export default loadInitialPage;

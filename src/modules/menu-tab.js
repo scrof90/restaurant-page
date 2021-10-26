@@ -6,4 +6,4 @@ function loadMenuTab() {
     'Lorem ipsum dolor sit amet consectetur adipisicing elit.Quaerat vel cum temporibus nesciunt.Veniam qui numquam nulla iure consequuntur corporis iusto.Deleniti alias ad ipsum quibusdam illo ipsam a cupiditate.';
 }
 
-export { loadMenuTab };
+export default loadMenuTab;

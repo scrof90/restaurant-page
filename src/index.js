@@ -1,9 +1,9 @@
-import { loadPage } from './modules/initial-page';
-import { loadHomeTab } from './modules/home';
-import { loadMenuTab } from './modules/menu';
-import { loadContactsTab } from './modules/contacts';
+import loadInitialPage from './modules/initial-page';
+import loadHomeTab from './modules/home-tab';
+import loadMenuTab from './modules/menu-tab';
+import loadContactsTab from './modules/contacts-tab';
 
-loadPage();
+loadInitialPage();
 loadHomeTab();
 initTabEventListeners();
 

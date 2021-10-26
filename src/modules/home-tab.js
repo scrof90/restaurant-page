@@ -51,4 +51,4 @@ function createTextElement(tag, text, cssClass) {
   return element;
 }
 
-export { loadHomeTab };
+export default loadHomeTab;
