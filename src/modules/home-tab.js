@@ -1,3 +1,5 @@
+import domTools from './dom-tools';
+
 function loadHomeTab() {
   const content = document.querySelector('.js-content');
   content.innerHTML = '';
@@ -14,7 +16,7 @@ function loadHomeTab() {
     '<y>*</y>the Ur-Quan will be forcefully escorted from the premises',
     'bottom-text'
   );
-  appendChildren(
+  domTools.appendChildren(
     content,
     image,
     header,
@@ -23,12 +25,6 @@ function loadHomeTab() {
     species,
     bottomText
   );
-}
-
-// utility
-
-function appendChildren(parent, ...children) {
-  [...children].forEach((child) => parent.appendChild(child));
 }
 
 // image

@@ -1,3 +1,5 @@
+import domTools from './dom-tools';
+
 const attributions = [
   {
     href: 'https://www.artstation.com/artwork/aa6R8',
@@ -15,13 +17,7 @@ function loadInitialPage() {
   const nav = createNav();
   const main = createMain();
   const footer = createFooter();
-  appendChildren(body, header, nav, main, footer);
-}
-
-// utility
-
-function appendChildren(parent, ...children) {
-  [...children].forEach((child) => parent.appendChild(child));
+  domTools.appendChildren(body, header, nav, main, footer);
 }
 
 // header
@@ -46,7 +42,7 @@ function createNav() {
   const homeTab = createTab(true, 'js-home', 'Home');
   const menuTab = createTab(false, 'js-menu', 'Menu');
   const contactsTab = createTab(false, 'js-contacts', 'Contacts');
-  appendChildren(nav, homeTab, menuTab, contactsTab);
+  domTools.appendChildren(nav, homeTab, menuTab, contactsTab);
   return nav;
 }
 
@@ -69,7 +65,7 @@ function createMain() {
 
 function createContentDiv() {
   const content = document.createElement('div');
-  content.classList.add('content', 'js-content');
+  content.classList.add('content', 'blue-border', 'js-content');
   return content;
 }
 
@@ -79,7 +75,7 @@ function createFooter() {
   const footer = document.createElement('footer');
   const attributionList = createAttributionList();
   const myGithubLink = createMyGithubLink();
-  appendChildren(footer, attributionList, myGithubLink);
+  domTools.appendChildren(footer, attributionList, myGithubLink);
   return footer;
 }
 
