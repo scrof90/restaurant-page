@@ -24,15 +24,9 @@ function loadInitialPage() {
 
 function createHeader() {
   const header = document.createElement('header');
-  const title = createTitle();
+  const title = domTools.createElement('h1', "Saul Dyson's Bar");
   header.appendChild(title);
   return header;
-}
-
-function createTitle() {
-  const title = document.createElement('h1');
-  title.textContent = "Saul Dyson's Bar";
-  return title;
 }
 
 // nav
@@ -47,10 +41,8 @@ function createNav() {
 }
 
 function createTab(isActive, jsHook, text) {
-  const tab = document.createElement('div');
-  tab.classList.add('tab', jsHook);
+  const tab = domTools.createElement('div', text, 'tab', jsHook);
   if (isActive) tab.classList.add('active');
-  tab.textContent = text;
   return tab;
 }
 
@@ -58,15 +50,15 @@ function createTab(isActive, jsHook, text) {
 
 function createMain() {
   const main = document.createElement('main');
-  const contentDiv = createContentDiv();
+  const contentDiv = domTools.createElement(
+    'div',
+    null,
+    'content',
+    'blue-border',
+    'js-content'
+  );
   main.appendChild(contentDiv);
   return main;
-}
-
-function createContentDiv() {
-  const content = document.createElement('div');
-  content.classList.add('content', 'blue-border', 'js-content');
-  return content;
 }
 
 // footer
@@ -79,6 +71,8 @@ function createFooter() {
   return footer;
 }
 
+// attribution list
+
 function createAttributionList() {
   const attributionList = document.createElement('ul');
   const attributionListElements = attributions.map(createAttributionElement);
@@ -88,20 +82,18 @@ function createAttributionList() {
 
 function createAttributionElement(attribution) {
   const attributionElement = document.createElement('li');
-  const href = attribution.href;
-  const text = attribution.text;
-  const link = createAttributionLink(href, text);
+  const link = createAttributionLink(attribution.href, attribution.text);
   attributionElement.appendChild(link);
   return attributionElement;
 }
 
 function createAttributionLink(href, text) {
-  const link = document.createElement('a');
-  link.classList.add('attribution');
+  const link = domTools.createElement('a', text, 'attribution');
   link.href = href;
-  link.textContent = text;
   return link;
 }
+
+// github link
 
 function createMyGithubLink() {
   const myGithubLink = document.createElement('a');
@@ -112,8 +104,7 @@ function createMyGithubLink() {
 }
 
 function createMyGithubImg() {
-  const img = document.createElement('img');
-  img.classList.add('my-github');
+  const img = domTools.createElement('img', null, 'my-github');
   img.src = 'https://avatars.githubusercontent.com/u/46364597?v=4';
   img.alt = '@scrof90';
   return img;

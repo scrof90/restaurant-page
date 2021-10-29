@@ -12,26 +12,31 @@ function loadMenuTab() {
   const content = document.querySelector('.js-content');
   content.innerHTML = '';
   menuItems.forEach((item) => {
-    const menuItem = createMenuItem(item.name, item.imgSrc, item.desc);
+    const menuItem = createMenuItem(item);
     content.appendChild(menuItem);
   });
 }
 
 // menu item
 
-function createMenuItem(itemName, itemImgSrc, itemDesc) {
+function createMenuItem(item) {
   const menuItem = domTools.createElement(
     'div',
     null,
     'menu-item',
     'blue-border'
   );
-  const name = domTools.createElement('h2', itemName);
-  const image = domTools.createElement('img', null, 'img-home');
-  image.src = itemImgSrc;
-  const description = domTools.createElement('p', itemDesc);
+  const name = domTools.createElement('h2', item.name);
+  const image = createMenuImage(item.imgSrc);
+  const description = domTools.createElement('p', item.desc);
   domTools.appendChildren(menuItem, name, image, description);
   return menuItem;
+}
+
+function createMenuImage(imgSrc) {
+  const image = domTools.createElement('img', null, 'img-home');
+  image.src = imgSrc;
+  return image;
 }
 
 export default loadMenuTab;
