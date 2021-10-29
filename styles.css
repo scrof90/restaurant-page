@@ -86,11 +86,18 @@ main {
   background-size: cover;
 }
 
+.blue-border {
+  border: cornflowerblue;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px cornflowerblue;
+}
+
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  gap: 0.5em;
   color: white;
   font-size: 150%;
   text-align: center;
@@ -99,14 +106,12 @@ main {
   flex: 1;
   padding: 1em;
   background-color: hsla(210, 40%, 5%, 90%);
-  border: cornflowerblue;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px cornflowerblue;
 }
 
-.img-home {
-  flex: 0 1 auto;
-  align-self: stretch;
+.content > img {
+  max-width: 700px;
+  min-width: 200px;
+  flex-shrink: 1;
 }
 
 .bottom-text {
@@ -148,4 +153,26 @@ li {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 80%;
+  text-align: center;
+  line-height: 1em;
+  max-width: 400px;
+  max-height: 300px;
+  flex: 1;
+  padding: 1em;
+  background-color: hsla(210, 40%, 5%, 90%);
+}
+
+.menu-item > img {
+  max-height: 200px;
+  max-width: 200px;
+  align-self: center;
 }
