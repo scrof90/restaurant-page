@@ -1,33 +1,37 @@
-import loadInitialPage from './modules/initial-page';
-import loadHomeTab from './modules/home-tab';
-import loadMenuTab from './modules/menu-tab';
-import loadContactsTab from './modules/contacts-tab';
+// index.js
 
-loadInitialPage();
-loadHomeTab();
-initTabEventListeners();
+import initialPage from './modules/initial-page';
+import homeTab from './modules/home-tab';
+import menuTab from './modules/menu-tab';
+import contactsTab from './modules/contacts-tab';
 
-function initTabEventListeners() {
-  const homeTab = document.querySelector('.js-home');
-  const menuTab = document.querySelector('.js-menu');
-  const contactsTab = document.querySelector('.js-contacts');
+const initTabEvents = () => {
+  const home = document.querySelector('.js-home');
+  const menu = document.querySelector('.js-menu');
+  const contacts = document.querySelector('.js-contacts');
 
-  homeTab.addEventListener('click', (e) => {
+  home.addEventListener('click', (e) => {
     e.target.classList.add('active');
-    menuTab.classList.remove('active');
-    contactsTab.classList.remove('active');
-    loadHomeTab();
+    menu.classList.remove('active');
+    contacts.classList.remove('active');
+    homeTab.load();
   });
-  menuTab.addEventListener('click', (e) => {
+
+  menu.addEventListener('click', (e) => {
     e.target.classList.add('active');
-    homeTab.classList.remove('active');
-    contactsTab.classList.remove('active');
-    loadMenuTab();
+    home.classList.remove('active');
+    contacts.classList.remove('active');
+    menuTab.load();
   });
-  contactsTab.addEventListener('click', (e) => {
+
+  contacts.addEventListener('click', (e) => {
     e.target.classList.add('active');
-    homeTab.classList.remove('active');
-    menuTab.classList.remove('active');
-    loadContactsTab();
+    home.classList.remove('active');
+    menu.classList.remove('active');
+    contactsTab.load();
   });
-}
+};
+
+initialPage.load();
+homeTab.load();
+initTabEvents();
