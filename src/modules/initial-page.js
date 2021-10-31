@@ -20,7 +20,7 @@ const initialPage = (() => {
 
   const _createHeader = () => {
     const header = document.createElement('header');
-    const title = domTools.createElement('h1', "Saul Dyson's Bar");
+    const title = domTools.createElement('h1', "Bob Dyson's Bar");
     header.appendChild(title);
     return header;
   };

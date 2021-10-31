@@ -1,14 +1,14 @@
 var e = {
   createElement: function createElement(e, t) {
-    var a = document.createElement(e);
+    var r = document.createElement(e);
 
     for (var _len = arguments.length, n = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
       n[_key - 2] = arguments[_key];
     }
 
-    return t && (a.innerHTML = t), 0 !== n.length && [].concat(n).forEach(function (e) {
-      return a.classList.add(e);
-    }), a;
+    return t && (r.innerHTML = t), 0 !== n.length && [].concat(n).forEach(function (e) {
+      return r.classList.add(e);
+    }), r;
   },
   appendChildren: function appendChildren(e) {
     for (var _len2 = arguments.length, t = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
@@ -30,26 +30,26 @@ var e = {
   }],
       n = function n() {
     var e = document.createElement("ul");
-    return t.map(a).forEach(function (t) {
+    return t.map(r).forEach(function (t) {
       return e.appendChild(t);
     }), e;
   },
-      a = function a(e) {
+      r = function r(e) {
     var t = document.createElement("li"),
-        n = r(e.href, e.text);
+        n = a(e.href, e.text);
     return t.appendChild(n), t;
   },
-      r = function r(t, n) {
-    var a = e.createElement("a", n, "attribution");
-    return a.href = t, a;
-  },
-      o = function o() {
-    var e = document.createElement("a");
-    e.href = "https://github.com/scrof90";
-    var t = c();
-    return e.appendChild(t), e;
+      a = function a(t, n) {
+    var r = e.createElement("a", n, "attribution");
+    return r.href = t, r;
   },
       c = function c() {
+    var e = document.createElement("a");
+    e.href = "https://github.com/scrof90";
+    var t = o();
+    return e.appendChild(t), e;
+  },
+      o = function o() {
     var t = e.createElement("img", null, "my-github");
     return t.src = "https://avatars.githubusercontent.com/u/46364597?v=4", t.alt = "@scrof90", t;
   };
@@ -57,31 +57,31 @@ var e = {
   return {
     load: function load() {
       var t = document.querySelector("body"),
-          a = function () {
+          r = function () {
         var t = document.createElement("header"),
-            n = e.createElement("h1", "Saul Dyson's Bar");
+            n = e.createElement("h1", "Bob Dyson's Bar");
         return t.appendChild(n), t;
       }(),
-          r = function () {
+          a = function () {
         var t = document.createElement("nav"),
             n = e.createElement("div", "Home", "tab", "active", "js-home"),
-            a = e.createElement("div", "Menu", "tab", "js-menu"),
-            r = e.createElement("div", "Contacts", "tab", "js-contacts");
-        return e.appendChildren(t, n, a, r), t;
+            r = e.createElement("div", "Menu", "tab", "js-menu"),
+            a = e.createElement("div", "Contacts", "tab", "js-contacts");
+        return e.appendChildren(t, n, r, a), t;
       }(),
-          c = function () {
+          o = function () {
         var t = document.createElement("main"),
             n = e.createElement("div", null, "content", "blue-border", "js-content");
         return t.appendChild(n), t;
       }(),
           s = function () {
         var t = document.createElement("footer"),
-            a = n(),
-            r = o();
-        return e.appendChildren(t, a, r), t;
+            r = n(),
+            a = c();
+        return e.appendChildren(t, r, a), t;
       }();
 
-      e.appendChildren(t, a, r, c, s);
+      e.appendChildren(t, r, a, o, s);
     }
   };
 }(),
@@ -94,59 +94,81 @@ var e = {
       var t = e.createElement("img", null, "img-home");
       return t.src = "img/j-otto-szatmari-daygonebar-spacestation-jottoszatmari2016.jpg", t.alt = "Bar - Space Station by J.Otto Szatmari", t;
     }(),
-        a = e.createElement("h2", "Welcome to Saul Dyson's Bar!"),
-        r = e.createElement("p", "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy."),
-        o = e.createElement("p", "We are always open"),
-        c = e.createElement("p", "All species are welcome<y>*</y>"),
-        s = e.createElement("p", "<y>*</y>the Ur-Quan will be forcefully escorted from the premises", "bottom-text");
+        r = e.createElement("h2", "Welcome to Bob Dyson's Bar!"),
+        a = e.createElement("p", "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of the recently built <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive system in the galaxy."),
+        c = e.createElement("p", "We are always open"),
+        o = e.createElement("p", "And all species are welcome<y>*</y>"),
+        s = e.createElement("p", "<y>*</y>the Ur-Quan will be denied entry", "bottom-text");
 
-    e.appendChildren(t, n, a, r, o, c, s);
+    e.appendChildren(t, n, r, a, c, o, s);
   }
 },
-    a = function () {
+    r = function () {
   var t = [{
     name: "Improbable Burger",
     imgSrc: "img/menu-items/improbable-burger.jpg",
     desc: "Made by careful manipulation of probability waves we made the most perfect burger in Sol, conjured straight from the vacuum of space."
   }],
-      n = function n(t) {
-    var n = e.createElement("img", null, "img-home");
-    return n.src = t, n.alt = "Improbable Burger", n;
+      n = function n(t, _n) {
+    var r = e.createElement("img", null, "img-home");
+    return r.alt = t, r.src = _n, r;
   };
 
   return {
     load: function load() {
-      var a = document.querySelector(".js-content");
-      a.innerHTML = "", t.forEach(function (t) {
-        var r = function (t) {
-          var a = e.createElement("div", null, "menu-item", "blue-border"),
-              r = e.createElement("h2", t.name),
-              o = n(t.imgSrc),
-              c = e.createElement("p", t.desc);
-          return e.appendChildren(a, r, o, c), a;
+      var r = document.querySelector(".js-content");
+      r.innerHTML = "", t.forEach(function (t) {
+        var a = function (t) {
+          var r = e.createElement("div", null, "menu-item", "blue-border"),
+              a = e.createElement("h2", t.name),
+              c = n(t.name, t.imgSrc),
+              o = e.createElement("p", t.desc);
+          return e.appendChildren(r, a, c, o), r;
         }(t);
 
-        a.appendChild(r);
+        r.appendChild(a);
       });
     }
   };
 }(),
-    r = {
-  load: function load() {
-    var e = document.querySelector(".js-content");
-    e.innerHTML = "", e.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quaerat vel cum temporibus nesciunt.Veniam qui numquam nulla iure consequuntur corporis iusto.Deleniti alias ad ipsum quibusdam illo ipsam a cupiditate.";
-  }
-};
+    a = function () {
+  var t = [{
+    name: "Bob Dyson",
+    imgSrc: "img/menu-items/improbable-burger.jpg",
+    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+  }],
+      n = function n(t, _n2) {
+    var r = e.createElement("img", null, "img-home");
+    return r.alt = t, r.src = _n2, r;
+  };
+
+  return {
+    load: function load() {
+      var r = document.querySelector(".js-content");
+      r.innerHTML = "", t.forEach(function (t) {
+        var a = function (t) {
+          var r = e.createElement("div", null, "contact-item", "blue-border"),
+              a = e.createElement("h2", t.name),
+              c = n(t.name, t.imgSrc),
+              o = e.createElement("p", t.desc);
+          return e.appendChildren(r, a, o, c), r;
+        }(t);
+
+        r.appendChild(a);
+      });
+    }
+  };
+}();
 
 t.load(), n.load(), function () {
   var e = document.querySelector(".js-home"),
       t = document.querySelector(".js-menu"),
-      o = document.querySelector(".js-contacts");
+      c = document.querySelector(".js-contacts");
   e.addEventListener("click", function (e) {
-    e.target.classList.add("active"), t.classList.remove("active"), o.classList.remove("active"), n.load();
+    e.target.classList.add("active"), t.classList.remove("active"), c.classList.remove("active"), n.load();
   }), t.addEventListener("click", function (t) {
-    t.target.classList.add("active"), e.classList.remove("active"), o.classList.remove("active"), a.load();
-  }), o.addEventListener("click", function (n) {
-    n.target.classList.add("active"), e.classList.remove("active"), t.classList.remove("active"), r.load();
+    t.target.classList.add("active"), e.classList.remove("active"), c.classList.remove("active"), r.load();
+  }), c.addEventListener("click", function (n) {
+    n.target.classList.add("active"), e.classList.remove("active"), t.classList.remove("active"), a.load();
   });
 }();

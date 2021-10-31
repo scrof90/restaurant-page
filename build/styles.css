@@ -176,3 +176,23 @@ li {
   max-width: 200px;
   align-self: center;
 }
+
+.contact-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 80%;
+  text-align: center;
+  line-height: 1em;
+  max-width: 400px;
+  max-height: 300px;
+  flex: 1;
+  padding: 1em;
+  background-color: hsla(210, 40%, 5%, 90%);
+}
+
+.contact-item > img {
+  max-height: 200px;
+  max-width: 200px;
+}

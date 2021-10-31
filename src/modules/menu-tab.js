@@ -23,16 +23,16 @@ const menuTab = (() => {
       'blue-border'
     );
     const name = domTools.createElement('h2', item.name);
-    const image = _createMenuImage(item.imgSrc);
+    const image = _createMenuImage(item.name, item.imgSrc);
     const description = domTools.createElement('p', item.desc);
     domTools.appendChildren(menuItem, name, image, description);
     return menuItem;
   };
 
-  const _createMenuImage = (imgSrc) => {
+  const _createMenuImage = (alt, imgSrc) => {
     const image = domTools.createElement('img', null, 'img-home');
+    image.alt = alt;
     image.src = imgSrc;
-    image.alt = 'Improbable Burger';
     return image;
   };
 
@@ -41,8 +41,8 @@ const menuTab = (() => {
   const load = () => {
     const content = document.querySelector('.js-content');
     content.innerHTML = '';
-    menuItems.forEach((item) => {
-      const menuItem = _createMenuItem(item);
+    menuItems.forEach((el) => {
+      const menuItem = _createMenuItem(el);
       content.appendChild(menuItem);
     });
   };
