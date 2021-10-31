@@ -7,7 +7,17 @@ const menuTab = (() => {
     {
       name: 'Improbable Burger',
       imgSrc: 'img/menu-items/improbable-burger.jpg',
-      desc: 'Made by careful manipulation of probability waves we made the most perfect burger in Sol, conjured straight from the vacuum of space.'
+      desc: 'Conjured straight from the vacuum of space, Improbable Burger truly is the pinnacle of probability engineering.'
+    },
+    {
+      name: 'Lorem ipsum',
+      imgSrc: 'img/menu-items/improbable-burger.jpg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
+    },
+    {
+      name: 'Lorem ipsum',
+      imgSrc: 'img/menu-items/improbable-burger.jpg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
     }
   ];
 

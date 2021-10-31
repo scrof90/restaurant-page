@@ -9,7 +9,17 @@ const contactsTab = (() => {
     {
       name: 'Bob Dyson',
       imgSrc: 'img/menu-items/improbable-burger.jpg',
-      desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
+    },
+    {
+      name: 'Lorem ipsum',
+      imgSrc: 'img/menu-items/improbable-burger.jpg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
+    },
+    {
+      name: 'Lorem ipsum',
+      imgSrc: 'img/menu-items/improbable-burger.jpg',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
     }
   ];
 
