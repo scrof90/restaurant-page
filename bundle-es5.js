@@ -20,126 +20,155 @@ var e = {
     });
   }
 },
-    t = [{
-  href: "https://www.artstation.com/artwork/aa6R8",
-  text: "Background art by Renaud ROCHE"
-}, {
-  href: "https://www.artstation.com/artwork/nlKG6",
-  text: "Additional art by J.Otto Szatmari"
-}];
-
-function n(t, n, r) {
-  var a = e.createElement("div", r, "tab", n);
-  return t && a.classList.add("active"), a;
-}
-
-function r(t) {
-  var n = document.createElement("li"),
-      r = function (t, n) {
+    t = function () {
+  var t = [{
+    href: "https://www.artstation.com/artwork/aa6R8",
+    text: "Background art by Renaud ROCHE"
+  }, {
+    href: "https://www.artstation.com/artwork/nlKG6",
+    text: "Additional art by J.Otto Szatmari"
+  }],
+      n = function n() {
+    var e = document.createElement("ul");
+    return t.map(r).forEach(function (t) {
+      return e.appendChild(t);
+    }), e;
+  },
+      r = function r(e) {
+    var t = document.createElement("li"),
+        n = a(e.href, e.text);
+    return t.appendChild(n), t;
+  },
+      a = function a(t, n) {
     var r = e.createElement("a", n, "attribution");
     return r.href = t, r;
-  }(t.href, t.text);
+  },
+      c = function c() {
+    var e = document.createElement("a");
+    e.href = "https://github.com/scrof90";
+    var t = o();
+    return e.appendChild(t), e;
+  },
+      o = function o() {
+    var t = e.createElement("img", null, "my-github");
+    return t.src = "https://avatars.githubusercontent.com/u/46364597?v=4", t.alt = "@scrof90", t;
+  };
 
-  return n.appendChild(r), n;
-}
-
-function a() {
-  var t = document.querySelector(".js-content");
-  t.innerHTML = "";
-
-  var n = function () {
-    var t = e.createElement("img", null, "img-home");
-    return t.src = "img/j-otto-szatmari-daygonebar-spacestation-jottoszatmari2016.jpg", t.alt = "Bar - Space Station by J.Otto Szatmari", t;
-  }(),
-      r = e.createElement("h2", "Welcome to Saul Dyson's Bar!"),
-      a = e.createElement("p", "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of a recently build <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive systems in the galaxy."),
-      c = e.createElement("p", "We are always open"),
-      o = e.createElement("p", "All species are welcome<y>*</y>"),
-      i = e.createElement("p", "<y>*</y>the Ur-Quan will be forcefully escorted from the premises", "bottom-text");
-
-  e.appendChildren(t, n, r, a, c, o, i);
-}
-
-var c = [{
-  name: "Improbable Burger",
-  imgSrc: "img/menu-items/improbable-burger.jpg",
-  desc: "Made by careful manipulation of probability waves we made the most perfect burger in Sol, conjured straight from the vacuum of space."
-}];
-
-function o() {
-  var t = document.querySelector(".js-content");
-  t.innerHTML = "", c.forEach(function (n) {
-    var r = function (t) {
-      var n = e.createElement("div", null, "menu-item", "blue-border"),
-          r = e.createElement("h2", t.name),
-          a = function (t) {
-        var n = e.createElement("img", null, "img-home");
-        return n.src = t, n;
-      }(t.imgSrc),
-          c = e.createElement("p", t.desc);
-
-      return e.appendChildren(n, r, a, c), n;
-    }(n);
-
-    t.appendChild(r);
-  });
-}
-
-!function () {
-  var a = document.querySelector("body"),
-      c = function () {
-    var t = document.createElement("header"),
-        n = e.createElement("h1", "Saul Dyson's Bar");
-    return t.appendChild(n), t;
-  }(),
-      o = function () {
-    var t = document.createElement("nav"),
-        r = n(!0, "js-home", "Home"),
-        a = n(!1, "js-menu", "Menu"),
-        c = n(!1, "js-contacts", "Contacts");
-    return e.appendChildren(t, r, a, c), t;
-  }(),
-      i = function () {
-    var t = document.createElement("main"),
-        n = e.createElement("div", null, "content", "blue-border", "js-content");
-    return t.appendChild(n), t;
-  }(),
-      s = function () {
-    var n = document.createElement("footer"),
-        a = function () {
-      var e = document.createElement("ul");
-      return t.map(r).forEach(function (t) {
-        return e.appendChild(t);
-      }), e;
-    }(),
-        c = function () {
-      var t = document.createElement("a");
-      t.href = "https://github.com/scrof90";
-
-      var n = function () {
-        var t = e.createElement("img", null, "my-github");
-        return t.src = "https://avatars.githubusercontent.com/u/46364597?v=4", t.alt = "@scrof90", t;
+  return {
+    load: function load() {
+      var t = document.querySelector("body"),
+          r = function () {
+        var t = document.createElement("header"),
+            n = e.createElement("h1", "Bob Dyson's Bar");
+        return t.appendChild(n), t;
+      }(),
+          a = function () {
+        var t = document.createElement("nav"),
+            n = e.createElement("div", "Home", "tab", "active", "js-home"),
+            r = e.createElement("div", "Menu", "tab", "js-menu"),
+            a = e.createElement("div", "Contacts", "tab", "js-contacts");
+        return e.appendChildren(t, n, r, a), t;
+      }(),
+          o = function () {
+        var t = document.createElement("main"),
+            n = e.createElement("div", null, "content", "blue-border", "js-content");
+        return t.appendChild(n), t;
+      }(),
+          s = function () {
+        var t = document.createElement("footer"),
+            r = n(),
+            a = c();
+        return e.appendChildren(t, r, a), t;
       }();
 
-      return t.appendChild(n), t;
-    }();
+      e.appendChildren(t, r, a, o, s);
+    }
+  };
+}(),
+    n = {
+  load: function load() {
+    var t = document.querySelector(".js-content");
+    t.innerHTML = "";
 
-    return e.appendChildren(n, a, c), n;
-  }();
+    var n = function () {
+      var t = e.createElement("img", null, "img-home");
+      return t.src = "img/j-otto-szatmari-daygonebar-spacestation-jottoszatmari2016.jpg", t.alt = "Bar - Space Station by J.Otto Szatmari", t;
+    }(),
+        r = e.createElement("h2", "Welcome to Bob Dyson's Bar!"),
+        a = e.createElement("p", "With a spectacular dancing floor harboring the best DJs from all over the solar the system and a million energy credit view of the recently built <strong>Dyson sphere</strong>, enjoy a wide variety of unique meals that would satisfy even the most sophisticated digestive system in the galaxy."),
+        c = e.createElement("p", "We are always open"),
+        o = e.createElement("p", "And all species are welcome<y>*</y>"),
+        s = e.createElement("p", "<y>*</y>the Ur-Quan will be denied entry", "bottom-text");
 
-  e.appendChildren(a, c, o, i, s);
-}(), a(), function () {
+    e.appendChildren(t, n, r, a, c, o, s);
+  }
+},
+    r = function () {
+  var t = [{
+    name: "Improbable Burger",
+    imgSrc: "img/menu-items/improbable-burger.jpg",
+    desc: "Made by careful manipulation of probability waves we made the most perfect burger in Sol, conjured straight from the vacuum of space."
+  }],
+      n = function n(t, _n) {
+    var r = e.createElement("img", null, "img-home");
+    return r.alt = t, r.src = _n, r;
+  };
+
+  return {
+    load: function load() {
+      var r = document.querySelector(".js-content");
+      r.innerHTML = "", t.forEach(function (t) {
+        var a = function (t) {
+          var r = e.createElement("div", null, "menu-item", "blue-border"),
+              a = e.createElement("h2", t.name),
+              c = n(t.name, t.imgSrc),
+              o = e.createElement("p", t.desc);
+          return e.appendChildren(r, a, c, o), r;
+        }(t);
+
+        r.appendChild(a);
+      });
+    }
+  };
+}(),
+    a = function () {
+  var t = [{
+    name: "Bob Dyson",
+    imgSrc: "img/menu-items/improbable-burger.jpg",
+    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+  }],
+      n = function n(t, _n2) {
+    var r = e.createElement("img", null, "img-home");
+    return r.alt = t, r.src = _n2, r;
+  };
+
+  return {
+    load: function load() {
+      var r = document.querySelector(".js-content");
+      r.innerHTML = "", t.forEach(function (t) {
+        var a = function (t) {
+          var r = e.createElement("div", null, "contact-item", "blue-border"),
+              a = e.createElement("h2", t.name),
+              c = n(t.name, t.imgSrc),
+              o = e.createElement("p", t.desc);
+          return e.appendChildren(r, a, o, c), r;
+        }(t);
+
+        r.appendChild(a);
+      });
+    }
+  };
+}();
+
+t.load(), n.load(), function () {
   var e = document.querySelector(".js-home"),
       t = document.querySelector(".js-menu"),
-      n = document.querySelector(".js-contacts");
+      c = document.querySelector(".js-contacts");
   e.addEventListener("click", function (e) {
-    e.target.classList.add("active"), t.classList.remove("active"), n.classList.remove("active"), a();
+    e.target.classList.add("active"), t.classList.remove("active"), c.classList.remove("active"), n.load();
   }), t.addEventListener("click", function (t) {
-    t.target.classList.add("active"), e.classList.remove("active"), n.classList.remove("active"), o();
-  }), n.addEventListener("click", function (n) {
-    n.target.classList.add("active"), e.classList.remove("active"), t.classList.remove("active"), function () {
-      var e = document.querySelector(".js-content");
-      e.innerHTML = "", e.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quaerat vel cum temporibus nesciunt.Veniam qui numquam nulla iure consequuntur corporis iusto.Deleniti alias ad ipsum quibusdam illo ipsam a cupiditate.";
-    }();
+    t.target.classList.add("active"), e.classList.remove("active"), c.classList.remove("active"), r.load();
+  }), c.addEventListener("click", function (n) {
+    n.target.classList.add("active"), e.classList.remove("active"), t.classList.remove("active"), a.load();
   });
 }();
