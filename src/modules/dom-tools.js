@@ -12,7 +12,7 @@ const domTools = (() => {
 
   return {
     createElement,
-    appendChildren
+    appendChildren,
   };
 })();
 

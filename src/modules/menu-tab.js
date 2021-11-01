@@ -7,43 +7,43 @@ const menuTab = (() => {
     {
       name: 'Improbable Burger',
       imgSrc: 'img/menu-items/improbable-burger.jpg',
-      desc: 'Conjured straight from the vacuum of space, Improbable Burger truly is the pinnacle of probability engineering.'
+      desc: 'Conjured straight from the vacuum of space, Improbable Burger truly is the pinnacle of probability engineering.',
     },
     {
       name: 'Lorem ipsum',
       imgSrc: 'img/menu-items/improbable-burger.jpg',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.',
     },
     {
       name: 'Lorem ipsum',
       imgSrc: 'img/menu-items/improbable-burger.jpg',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.'
-    }
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil quidem ipsa.',
+    },
   ];
 
   // private
 
   // menu item
 
-  const _createMenuItem = (item) => {
-    const menuItem = domTools.createElement(
-      'div',
-      null,
-      'menu-item',
-      'blue-border'
-    );
-    const name = domTools.createElement('h2', item.name);
-    const image = _createMenuImage(item.name, item.imgSrc);
-    const description = domTools.createElement('p', item.desc);
-    domTools.appendChildren(menuItem, name, image, description);
-    return menuItem;
-  };
-
-  const _createMenuImage = (alt, imgSrc) => {
+  const createMenuImage = (alt, imgSrc) => {
     const image = domTools.createElement('img', null, 'img-home');
     image.alt = alt;
     image.src = imgSrc;
     return image;
+  };
+
+  const createMenuItem = (item) => {
+    const menuItem = domTools.createElement(
+      'div',
+      null,
+      'menu-item',
+      'blue-border',
+    );
+    const name = domTools.createElement('h2', item.name);
+    const image = createMenuImage(item.name, item.imgSrc);
+    const description = domTools.createElement('p', item.desc);
+    domTools.appendChildren(menuItem, name, image, description);
+    return menuItem;
   };
 
   // public
@@ -52,13 +52,13 @@ const menuTab = (() => {
     const content = document.querySelector('.js-content');
     content.innerHTML = '';
     menuItems.forEach((el) => {
-      const menuItem = _createMenuItem(el);
+      const menuItem = createMenuItem(el);
       content.appendChild(menuItem);
     });
   };
 
   return {
-    load
+    load,
   };
 })();
 
